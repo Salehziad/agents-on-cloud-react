@@ -94,7 +94,7 @@ export default function Signin() {
                     loading: false
                 });
             } else {
-                authenticate(data, () => {
+                authenticate(response, () => {
                     setData({
                         ...data,
                         reDirect: true

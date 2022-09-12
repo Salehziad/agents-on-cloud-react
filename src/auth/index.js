@@ -9,13 +9,11 @@ export const signup = user => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => {
-            console.log(err);
-        });
+    }).then(response => {
+        return response.json();
+    }).catch(err => {
+        console.log(err);
+    });
 };
 
 export const signin = async(user) => {
@@ -35,13 +33,18 @@ export const signin = async(user) => {
 }
 
 export const authenticate = (data, next) => {
-        cookies.set('data', data, {path: '/'});
-        next();
+    cookies.set('data', data, {path: '/'});
+    window
+        .location
+        .reload();
+    next();
 };
 
 export const signout = next => {
-    cookies.remove('data',{ path: '/' })
-    window.location.reload();
+    cookies.remove('data', {path: '/'})
+    window
+        .location
+        .reload();
 
 };
 
@@ -55,3 +58,5 @@ export const isAuthenticated = () => {
         return false;
     }
 };
+
+

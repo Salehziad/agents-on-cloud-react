@@ -29,16 +29,17 @@ export default function Menu() {
                         component="div"
                         sx={{
                         flexGrow: 1
-                    }}>
+                    }} onClick={() => navigate('/')}>
                         Store
                     </Typography>
                     {isAuthenticated()
                         ? <React.Fragment>
                                 <Button color="inherit" onClick={() => navigate('/dashboard')}>Dashboard</Button>
+                                <Button color="inherit" onClick={() => navigate('/dashboard/createitem')}>Create</Button>
                                 <Button color="inherit" onClick={() => signout()}>log Out</Button>
                             </React.Fragment>
                         : <React.Fragment>
-                            <Button color="inherit" onClick={() => navigate('/signin')}>Log In</Button>
+                            <Button color="inherit" onClick={() => navigate('/signin')}>Log In</Button> 
                             <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
                         </React.Fragment>}
                 </Toolbar>
