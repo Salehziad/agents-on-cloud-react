@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import FileBase64 from 'react-file-base64';
 import {isAuthenticated} from '../../../auth';
 import {updateItem,getOneItem} from '../../../api/itemApi'
-import {Link} from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 // import {createProduct, getCategories} from './apiAdmin';
@@ -35,7 +34,6 @@ export default function UpdateItem({match}) {
         loading,
         error,
         createdProduct,
-        redirectToProfile,
     } = item;
 
         

@@ -2,7 +2,7 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 export const signup = user => {
-    return fetch(`http://localhost:5000/api/v1/users/signup`, {
+    return fetch(`https://store-server-saleh.herokuapp.com/api/v1/users/signup`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -17,7 +17,7 @@ export const signup = user => {
 };
 
 export const signin = async(user) => {
-    return await fetch(`http://localhost:5000/api/v1/users/signin`, {
+    return await fetch(`https://store-server-saleh.herokuapp.com/api/v1/users/signin`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
